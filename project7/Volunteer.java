@@ -6,6 +6,7 @@ public class Volunteer {
 	Location location;// = new Location;
 	Location destination;
 	long timeRequired;
+	double[] start;
 
 	public Volunteer(Model model, java.lang.String name, int score, Location location)  {
 		this.model = model;
@@ -16,11 +17,22 @@ public class Volunteer {
 	
 	public Location getCurrentLocation() {
 		return location;
+		
 	}
 	
 	public double[] getCurrentPosition() {
-		return location.getXY();
+		
 	}
+//		if (destination.getXY()==location.getXY()) {
+//			return location.getXY();
+//		}
+//		else{
+//			double[] locXY = location.getXY();
+//			double[] destXY = destination.getXY();
+//			double dX = destXY[0]-locXY[0];
+//			double dY = destXY[1]-locXY[1];
+//			return double[] final = {dX,dY};
+//		}
 	
 	public double[] getDestination() {
 		return destination.getXY();
@@ -39,7 +51,8 @@ public class Volunteer {
 	}
 	
 	public double[] getStart() {
-		return location.getXY();
+		this.start = location.getXY();
+		return start;
 	}
 	
 	public void startMoving(Location destination,long timeRequired) {
